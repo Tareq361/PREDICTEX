@@ -1,0 +1,55 @@
+
+
+
+{% extends 'base.html' %}
+{%block title%}Multi Billionaire | A trustworthy E-commerce site{%endblock title%}
+{% block body %}
+{% load static %}
+<style>
+    * {
+  box-sizing: border-box;
+}
+</style>
+<div class="uni-checkout">
+                <div class="uni-banner-default uni-background-1">
+                    <div class="container">
+                        <!-- Page title -->
+                        <div class="page-title">
+                            <div class="page-title-inner">
+                                <h1>Covid-19 Prediction</h1>
+                            </div>
+                        </div>
+                        <!-- End page title -->
+
+                        <!-- Breadcrumbs -->
+
+                    </div>
+                </div>
+
+
+
+
+</div>
+
+    <div style=" margin:auto;
+    width:25%;text-align:center;height:500px">
+        <img class="img-responsive" src="{% static 'images/covid-19.jpg' %}">
+               <div style=" display: block;
+  margin-left: auto;
+  margin-right: auto;
+  ">
+            <form action="{%url 'Detector:covid'%}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+   </br>
+    <input type="file" style="text-align:center" name="image" id="exampleFormControlFile1">
+
+                </br>
+     <div class="btn-all">
+         <button type="submit" value="Submit"  data-value="Place order">Submit</button>
+
+     </div>
+</form>
+               </div>
+        </div>
+
+   {% endblock %}

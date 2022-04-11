@@ -1,0 +1,1 @@
+web: gunicorn MultiDiseaseDetector.wsgi --log-file -

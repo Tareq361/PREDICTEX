@@ -1,0 +1,151 @@
+
+
+
+{% extends 'base.html' %}
+{%block title%}Multi Billionaire | A trustworthy E-commerce site{%endblock title%}
+{% block body %}
+{% load static %}
+<div class="uni-checkout">
+                <div class="uni-banner-default uni-background-1">
+                    <div class="container">
+                        <!-- Page title -->
+                        <div class="page-title">
+                            <div class="page-title-inner">
+                                <h1>Kidney Disease Prediction</h1>
+                            </div>
+                        </div>
+                        <!-- End page title -->
+
+                        <!-- Breadcrumbs -->
+
+                    </div>
+                </div>
+
+
+                <main id="main" class="clearfix right_sidebar">
+                    <div class="uni-checkout-body">
+                        <div class="container">
+                            <div class="tg-container">
+                                <div id="primary">
+
+                                    <div class="entry-thumbnail">
+
+                                        <div class="entry-content-text-wrapper clearfix">
+                                            <div class="entry-content-wrapper">
+                                                <div class="entry-content">
+
+                                                        <div class="row" style="margin-top: -100px;">
+                                                            <div class="vk-checkout-billing-left">
+                                                                <div class="col-md-6">
+                                                                    <form action="{%url 'Detector:kidney' %}" method="POST">
+                                                                        {% csrf_token %}
+                                                                    <div class="woocommerce-billing-fields">
+
+                                                                        <h3>Enter the following parameters</h3>
+                                                                        <div class="woocommerce-billing-fields__field-wrapper">
+
+                                                                            <p class="form-row form-row-last validate-required">
+                                                                                <label for="kidAge" class="">Age <abbr class="required" title="required">*</abbr></label>
+                                                                                <input type="number" class="input-text " name="kAge" id="kidAge" placeholder="" value="">
+                                                                            </p>
+
+                                                                            <p class="form-row form-row-last validate-required" id="billing_address_field" >
+                                                                                <label for="kbp" class="">Blood Pressure<abbr class="required" title="required">*</abbr></label>
+                                                                                <input type="number" class="input-text " name="bp" id="kbp" placeholder="" value="" required>
+                                                                            </p>
+                                                                            <p class="form-row form-row-last validate-required" id="billing_town_city_field" >
+                                                                                <label for="krbc" class="">Red blood cell count<abbr class="required" title="required">*</abbr></label>
+                                                                                <input type="number" class="input-text " name="rbc" id="krbc" placeholder="" value="">
+                                                                            </p>
+
+                                                                            <p class="form-row form-row-last validate-required" >
+                                                                                <label for="kwbc" class="">White blood cell count<abbr class="required" title="required">*</abbr></label>
+                                                                                <input type="number" class="input-text " name="wbc" id="kwbc" placeholder="" value="" >
+                                                                            </p>
+
+                                                                            <p class="form-row form-row-last validate-required"  >
+                                                                                <label for="Appetite" class="">Appetite<abbr class="required" title="required">*</abbr></label>
+                                                                                          <select class="form-select" aria-label="Default select example" name="appet" id="Appetite">
+                                                                                                      <option value="1">Yes</option>
+                                                                                                      <option value="0">No</option>
+
+
+                                                                                                    </select>
+                                                                            </p>
+                                                                            <p class="form-row form-row-last validate-required"  >
+                                                                                         <label for="pc" class="">Pus cell <abbr class="required" title="required">*</abbr></label>
+                                                                                                         <select class="form-select" aria-label="Default select example" name="pc_normal" id="pc">
+                                                                                                      <option value="1">Normal</option>
+                                                                                                      <option value="0">Not Normal</option>
+
+
+                                                                                                    </select>
+                                                                            </p>
+                                                                             <p class="form-row form-row-last validate-required"  >
+                                                                                         <label for="htn" class="">Hypertension <abbr class="required" title="required">*</abbr></label>
+                                                                                                         <select class="form-select" aria-label="Default select example" name="htn" id="htn">
+                                                                                                      <option value="1">Yes</option>
+                                                                                                      <option value="0">No</option>
+
+
+                                                                                                    </select>
+                                                                            </p>
+                                                                              <p class="form-row form-row-last validate-required"  >
+                                                                                <label for="hemo" class="">Hemoglobin  <abbr class="required" title="required">*</abbr></label>
+                                                                                <input type="number" step="0.01" name="hemo" id="hemo" placeholder="" value="" >
+                                                                            </p>
+                                                                            <p class="form-row form-row-last validate-required"  >
+                                                                                <label for="bgr" class="">Blood glucose random  <abbr class="required" title="required">*</abbr></label>
+                                                                                <input type="number" step="0.01" name="bgr" id="bgr" placeholder="" value="" >
+                                                                            </p>
+                                                                             <p class="form-row form-row-last validate-required"  >
+                                                                                         <label for="dm" class="">Diabetes mellitus <abbr class="required" title="required">*</abbr></label>
+                                                                                                         <select class="form-select" aria-label="Default select example" name="dm" id="dm">
+                                                                                                      <option value="1">Yes</option>
+                                                                                                      <option value="0">No</option>
+
+
+                                                                                                    </select>
+                                                                            </p>
+                                                                             <p class="form-row form-row-last validate-required"  >
+                                                                                         <label for="ane" class="">Anemia <abbr class="required" title="required">*</abbr></label>
+                                                                                                         <select class="form-select" aria-label="Default select example" name="ane" id="ane">
+                                                                                                      <option value="1">Yes</option>
+                                                                                                      <option value="0">No</option>
+
+
+                                                                                                    </select>
+                                                                            </p>
+
+
+                                                                            </br>
+
+                                                                             <div class="btn-all">
+                                                                            <button type="submit" value="Submit"  data-value="Place order">Submit</button>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    </form>
+
+
+                                                                </div>
+
+
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- .entry-content -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div> <!-- Primary end -->
+                            </div>
+                        </div>
+                </main>
+</div>
+
+   {% endblock %}

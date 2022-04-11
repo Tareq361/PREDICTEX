@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{%block title%}Multi Billionaire | A trustworthy E-commerce site{%endblock title%}
+{% block body %}
+{% load static %}
+<style>
+.result{
+ margin: auto;
+  width: 40%;
+
+}
+.resultimg{
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+    @media only screen and (max-width: 1000px) {
+.result{
+
+}
+</style>
+<div class="uni-checkout">
+                <div class="uni-banner-default uni-background-1">
+                    <div class="container">
+                        <!-- Page title -->
+                        <div class="page-title">
+                            <div class="page-title-inner">
+                                <h1>{{disease}} Prediction Result</h1>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+    <div style="font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 600;">
+        {%if covid%}
+        <div class="result">
+        <img src="{{image.url}}" class="resultimg">
+            <h3 style="text-align: center;"><div style="color:green">{{label}}</div></h3>
+            <div class="uni-processbar-thick" style="margin-top:-4px">
+                            <h2 style="text-align: center;">
+                                Accuracy
+                            </h2>
+                            <div class="progress skill-bar ">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{accuracy}}" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+                                    <span class="skill"><i class="val">{{accuracy}}%</i></span>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+            </div>
+
+
+        {%else%}
+    {%if result == 0%}
+        <h3 style="text-align: center;"><div style="color:green">Congrats!</div> You are Healthy</h3>
+    {%else%}
+    <h3 style="text-align: center;"><div style="color:red">Sorry!</div>You are affected by {{disease}}</h3>
+    {%endif%}
+    {%endif%}
+    </div>
+    <div class="uni-home-our-services">
+                    <div class="uni-shortcode-icons-box-5">
+                        <div class="container">
+
+                            <div class="uni-home-title">
+                                <h3>You may also try</h3>
+                                <div class="uni-underline"></div>
+                            </div>
+
+                            <div class="row" >
+                                <div class="col-md-4 col-sm-6" style="a:hover {color: blue;}">
+                                    <a href="{%url 'Detector:diabetes'%}">
+                                    <div class="uni-shortcode-icons-box-5-default">
+                                        <div class="item-icons-title">
+                                            <div class="col-md-4 uni-clear-padding">
+                                                <div class="item-icons">
+                                                    <img src="/static/images/icons_box/icon_4/icon-5.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 uni-clear-padding">
+                                                <div class="item-title">
+
+                                                    <h4>Diabetes detection </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                     <a href="{%url 'Detector:heart'%}">
+                                    <div class="uni-shortcode-icons-box-5-default">
+                                        <div class="item-icons-title">
+                                            <div class="col-md-4 uni-clear-padding">
+                                                <div class="item-icons">
+                                                    <img src="/static/images/icons_box/icon_4/icon-4.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 uni-clear-padding">
+                                                <div class="item-title">
+                                                    <h4>Coronary Heart Disease detection</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                     </a>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                     <a href="{%url 'Detector:liver'%}">
+                                    <div class="uni-shortcode-icons-box-5-default">
+                                        <div class="item-icons-title">
+                                            <div class="col-md-4 uni-clear-padding">
+                                                <div class="item-icons">
+                                                    <img src="/static/images/icons_box/icon_4/icon-3.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 uni-clear-padding">
+                                                <div class="item-title">
+                                                    <h4>Liver Disease detection</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                     </a>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <a href="{%url 'Detector:kidney'%}">
+                                    <div class="uni-shortcode-icons-box-5-default">
+                                        <div class="item-icons-title">
+                                            <div class="col-md-4 uni-clear-padding">
+                                                <div class="item-icons">
+                                                    <img src="/static/images/icons_box/icon_4/icon-2.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 uni-clear-padding">
+                                                <div class="item-title">
+                                                    <h4>Kidney Disease detection</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="uni-shortcode-icons-box-5-default">
+                                        <div class="item-icons-title">
+                                            <div class="col-md-4 uni-clear-padding">
+                                                <div class="item-icons">
+                                                    <img src="/static/images/icons_box/icon_4/icon-1.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 uni-clear-padding">
+                                                <div class="item-title">
+                                                    <h4>Covid-19 detection</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+</div>
+
+
+
+{%endblock%}
